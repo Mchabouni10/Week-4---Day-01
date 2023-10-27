@@ -144,41 +144,55 @@
 //  console.log(person1)
 
 
-// class Dinner { //class dinner
-//     constructor(appetizer, entree, dessert) { // 3 prorpreties appetizer, entree and dessert
-//       this.appetizer = appetizer;
-//       this.entree = entree;
-//       this.dessert = dessert;
+//====================== class dinner and class chef ============================
+// class Dinner {    //class Dinner 
+//     constructor(appetizer, entree, dessert) { // 3 propreties in our Constructor apptizer, entree, dessert
+//       this.appetizer = appetizer //proprety 1
+//       this.entree = entree  //proprety 2
+//       this.dessert = dessert //proprety 3
 //     }
-//     listCourse() {
-//         // console.log(`Appetizer: ${this.appetizer}`);
-//         // console.log(`Entree: ${this.entree}`);
-//         // console.log(`Dessert: ${this.dessert}`);
+  
+//     getOrder() {  //method or function that show what is in our order
+//       console.log(`My order has ${this.appetizer} as an (appetizer), ${this.entree} as (entree), and ${this.dessert} as a (dessert).`);
 //     }
-//     changeDessert(newDessert) {
-//         this.dessert = newDessert;
+  
+//     changeDessert(newDessert) {  //method or function to change dessert if we want but I did not succeed to link it and work proprely
+//       this.dessert = newDessert;
 //     }
-//     dinnertaste(){
-//         console.log('mmmmm so yummy');
+  
+//     orderReceipt() {
+//       console.log('Thank you for your service.'); //method or function for the receipt
+//     }
+//   }
+  
+//   class Chef {   //class chef with chefName has 2 proporeties chefName and Dish chef made 
+//     constructor(chefName) {
+//       this.chefName = chefName;
+//       this.dish = [];
+//     }
+  
+//     makeADish(appetizer, entree, dessert) {  //a method or function the dish the chef made and link it to dinner
+//       let newDinner = new Dinner(appetizer, entree, dessert);
+//       this.dish.push(newDinner);
+//     }
+  
+//     serveDishes() {  // Serve each dish that chef made 
+//       this.dish.forEach((dinner) => { // use forEach dinner that chef made 
+//         console.log(`Dish prepared by Chef ${this.chefName}:`); // display the name of the chef who prepared the dish
+//         dinner.getOrder(); // call dinner get order from the class dinner
+//         dinner.orderReceipt(); // call dinner orderreceipt from the class dinner
+//         console.log('=========================================================================')
+//       });
 //     }
 //   }
 
-// class Chef { //class chef is facotry for class dinner
-//     constructor(chefName){
-//     this.chefName = chefName ;
-//     this.dish = [] ;
-//     }
+//   const chef = new Chef("Gusto");      // Create a Chef instance
 
   
-// makeAdish (appetizer, entree, dessert) {
-//     let newDinner = new Dinner(appetizer, entree, dessert);
-//   this.dish.push(newDinner)
-//    };
-// }
-    
-
-//   let newChef= new Chef('Gusto');
-//   newChef.makeAdish('Salad','Steak','ChocalateCake')
-//   newChef.makeAdish('Soup','cheicken','icecream')
-//   newChef.makeAdish('Stemmed vegetables','Steak','Flan')
-//   console.log(newChef)
+  
+//   chef.makeADish("Salad", "Grilled Chicken", "Cheesecake"); // Make and serve some dishes
+//   chef.makeADish("Soup", "Steak", "Chocolate Cake");
+//   chef.makeADish("Humus", "Chicken Bryani", "Flan" )
+  
+  
+//   chef.serveDishes() // Serve the dishes
